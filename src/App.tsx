@@ -15,7 +15,7 @@ const PhoneLayout = styled.main`
   max-height: 920px;
   width: 100%;
   height: 100%;
-  border: 1px solid ${props => props.theme.colors.black};
+  border: 1px solid ${props => props.theme.colors.chatBlack};
   border-radius: 10px;
 `;
 
