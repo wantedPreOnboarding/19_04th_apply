@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import DelReplyBtn from 'components/DelReplyBtn/DelReplyBtn';
 
 const AppLayout = styled.div`
   height: 100vh;
@@ -18,7 +19,9 @@ const PhoneLayout = styled.main`
 
 const App = () => (
   <AppLayout>
-    <PhoneLayout></PhoneLayout>
+    <PhoneLayout>
+      <DelReplyBtn />
+    </PhoneLayout>
   </AppLayout>
 );
 export default App;
