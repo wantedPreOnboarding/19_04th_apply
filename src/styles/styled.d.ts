@@ -32,7 +32,5 @@ declare module 'styled-components' {
     borderRadius: {
       normal: string;
     };
-
-    border: string;
   }
 }

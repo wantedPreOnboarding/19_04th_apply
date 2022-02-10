@@ -34,8 +34,6 @@ const theme: DefaultTheme = {
   borderRadius: {
     normal: '10px',
   },
-
-  border: '1px solid #cccccc',
 };
 
 export { theme };

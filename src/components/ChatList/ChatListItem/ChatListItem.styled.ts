@@ -27,23 +27,24 @@ export const Profile = styled.img`
 export const Name = styled.strong`
   padding-left: 10px;
   font-size: ${({ theme }) => theme.fontSize.m};
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeight.semiStrong};
   font-family: Noto Sans;
-  color: ${({ theme }) => theme.colors.name};
+  color: ${({ theme }) => theme.colors.chatBlack};
 `;
 
 export const Data = styled.span`
   margin-left: auto;
   font-size: 8px;
+  font-size: ${({ theme }) => theme.fontSize.xs};
   font-family: Roboto;
-  color: ${({ theme }) => theme.colors.black};
+  color: #000;
 `;
 
 export const BoxText = styled.div`
   margin-top: 5px;
   padding: 15px 20px;
   border-radius: 10px;
-  font-size: ${({ theme }) => theme.fontSize.xs};
-  background: ${({ theme }) => theme.colors.textBackground};
-  color: ${({ theme }) => theme.colors.text};
+  font-size: ${({ theme }) => theme.fontSize.s};
+  background: ${({ theme }) => theme.colors.chatPink};
+  color: ${({ theme }) => theme.colors.chatBurgundy};
 `;
