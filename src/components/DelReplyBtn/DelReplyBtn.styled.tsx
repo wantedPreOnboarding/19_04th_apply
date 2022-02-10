@@ -6,7 +6,7 @@ export const DelReplyWrapper = styled.div`
   height: 15px;
   margin: 0 3px;
   padding: 0 4px;
-  background-color: #d6d5d5; //나중에 theme에 gray추가
+  background-color: ${({ theme }) => theme.colors.chatgray};
   border-radius: 5px;
   justify-content: space-around;
   align-items: center;

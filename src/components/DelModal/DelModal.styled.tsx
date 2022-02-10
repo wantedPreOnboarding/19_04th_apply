@@ -10,7 +10,7 @@ export const DelModalWindow = styled.div`
   width: 100%;
   margin: auto auto;
   padding: 30px 30px;
-  border: 1px solid #ff505f; //chatPinkyRed 테마 추가
+  border: 1px solid ${({ theme }) => theme.colors.chatTomato};
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   background-color: ${({ theme }) => theme.colors.chatWhite};
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
@@ -18,7 +18,7 @@ export const DelModalWindow = styled.div`
 
 export const DelModalH1 = styled.h1`
   margin-bottom: 30px;
-  font-size: 28px; // 더 큰 xxl만들어야 함 22px;
+  font-size: ${({ theme }) => theme.fontSize.xxl};
   font-weight: ${({ theme }) => theme.fontWeight.semiStrong};
   color: ${({ theme }) => theme.colors.chatBlack};
 `;
@@ -30,7 +30,7 @@ export const DelContentBox = styled.div`
   padding: 22px 0 0 0;
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   color: ${({ theme }) => theme.colors.chatWhite};
-  background-color: #ff505f; //chatPinkyRed theme
+  background-color: ${({ theme }) => theme.colors.chatTomato};
   font-size: ${({ theme }) => theme.fontSize.xl};
   font-weight: ${({ theme }) => theme.fontWeight.semiStrong};
   text-align: center;
@@ -56,7 +56,7 @@ export const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   font-weight: ${({ theme }) => theme.fontWeight.semiStrong};
   color: #ff505f; //chatPinkyRed theme
-  background-color: #ffd6d6; //chatCherryBlossom theme
+  background-color: ${({ theme }) => theme.colors.chatTomato};
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   cursor: pointer;
 `;
