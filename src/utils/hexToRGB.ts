@@ -1,4 +1,4 @@
-const hexToRgb = (hex: string, alpha?: number): string => {
+const hexToRGB = (hex: string, alpha?: number): string => {
   const upperCaseHex = hex.toUpperCase().replace('#', '');
 
   const h = '0123456789ABCDEF';
@@ -10,4 +10,4 @@ const hexToRgb = (hex: string, alpha?: number): string => {
   return `rgb(${r}, ${g}, ${b})`;
 };
 
-export default hexToRgb;
+export default hexToRGB;
