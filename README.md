@@ -59,17 +59,12 @@
 
 ### ✔ 담당자 : 이송현
 
-### ✔ 담당자 : 팀 전체
-
-- 가공 방식 필터
-- 재료 선택 필터
-
 ## 6. 💿 설치 및 실행 방법
 
 Project Clone
 
 ```bash
-$ git clone https://github.com/wantedPreOnboarding/19_04th_apply.git
+$ git clone https://github.com/wantedPreOnboarding/19_04th_messenger
 ```
 
 Project Setup
