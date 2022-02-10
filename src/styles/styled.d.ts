@@ -3,17 +3,36 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      name: string;
-      textBackground: string;
-      text: string;
-      black: string;
-      white: string;
+      chatBlack: string;
+      chatPink: string;
+      chatBurgundy: string;
+      chatWhite: string;
+      chatTomato: string;
+      chatRed: string;
+      chatLGray: string;
+      chatgray: string;
     };
     fontSize: {
       xs: string;
       s: string;
       m: string;
       l: string;
+      xl: string;
     };
+    fontWeight: {
+      strong: number;
+      semiStrong: number;
+      normal: number;
+    };
+    lineHeight: {
+      s: number;
+      m: number;
+      l: number;
+    };
+    borderRadius: {
+      normal: string;
+    };
+
+    border: string;
   }
 }
