@@ -1,13 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { useAppSelector } from 'hooks/useStore';
 import { users, messages } from 'data/chat';
-import store from 'store/store';
-
-// type StateType = { id: number; [key: string]: unknown };
-
-// const getLastIndex = (data: StateType[]) => {
-//   return data[data.length - 1].id;
-// };
 
 const chatSlice = createSlice({
   name: 'chat',
