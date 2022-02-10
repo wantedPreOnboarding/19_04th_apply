@@ -1,4 +1,4 @@
-# 프로젝트
+# Apply
 
 1. 💁 프로젝트 소개
 2. 👋🏻 팀원 소개
@@ -11,7 +11,7 @@
 ## 1. 💁 프로젝트 소개
 
 - 주제 : 프로젝트
-- 기간 : 22.02.07 ~ 22.02.09
+- 기간 : 22.02.10 ~ 22.02.12
 
 ## 2. 👋🏻 팀원 소개
 
@@ -69,8 +69,7 @@
 Project Clone
 
 ```bash
-$ https://github.com/wantedPreOnboarding/19_03rd_dashboard
-
+$ git clone https://github.com/wantedPreOnboarding/19_04th_apply.git
 ```
 
 Project Setup
