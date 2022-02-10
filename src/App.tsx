@@ -18,7 +18,7 @@ const PhoneLayout = styled.main`
 
 const App = () => (
   <AppLayout>
-    <PhoneLayout className="App"></PhoneLayout>
+    <PhoneLayout></PhoneLayout>
   </AppLayout>
 );
 export default App;
