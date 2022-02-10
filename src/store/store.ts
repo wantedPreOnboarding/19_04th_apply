@@ -1,13 +1,17 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-
-const rootReducer = combineReducers({});
+import { configureStore } from '@reduxjs/toolkit';
+import { authReducer, chatReducer } from './slices';
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    auth: authReducer,
+    chat: chatReducer,
+  },
 });
 
-export type AppDispatch = typeof store.dispatch;
+// RootState type
 export type RootState = ReturnType<typeof store.getState>;
-export type AppState = ReturnType<typeof rootReducer>;
+
+// App Dispatch type
+export type AppDispatch = typeof store.dispatch;
 
 export default store;
