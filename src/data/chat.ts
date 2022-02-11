@@ -19,31 +19,31 @@ const users = [
 const messages = [
   {
     id: 1000,
-    createAt: 1644492762435,
+    createAt: 1644492766000,
     userId: 1,
     message: '안녕~',
   },
   {
     id: 1001,
-    createAt: 1644492763000,
+    createAt: 1644492996000,
     userId: 2,
     message: '응 임수야~',
   },
   {
     id: 1002,
-    createAt: 1644492764000,
+    createAt: 1644494116000,
     userId: 3,
     message: '앗 금지!',
   },
   {
     id: 1003,
-    createAt: 1644492765000,
+    createAt: 1644494000000,
     userId: 1,
     message: '너무해 ㅠㅠ',
   },
   {
     id: 1004,
-    createAt: 1644492766000,
+    createAt: 1644494100000,
     userId: 3,
     message: '😋',
   },

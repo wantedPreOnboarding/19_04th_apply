@@ -8,7 +8,7 @@ const ChatList = () => {
   const users = useAppSelector(state => state.chat.chatList.users);
   const messages = useAppSelector(state => state.chat.chatList.messages);
   const addAuth = users.map(user =>
-    user.userId === auth.loginUserId ? { ...user, auth: true } : { ...user, auth: false },
+    user.userId === auth.userId ? { ...user, auth: true } : { ...user, auth: false },
   );
   const roomData = messages.map(message => ({
     ...message,
