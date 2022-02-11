@@ -1,31 +1,43 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { users, messages } from 'data/chat';
+import { stringify } from 'querystring';
 
 const chatSlice = createSlice({
   name: 'chat',
   initialState: {
-    id: 1,
-    title: 'SweetLover',
-    users,
-    messages,
+    chatList: {
+      id: 1,
+      title: 'SweetLover',
+      users,
+      messages,
+    },
+    reply: {
+      userName: '',
+      message: '',
+    },
   },
   reducers: {
     writeMessage: (state, action: PayloadAction<{ id: number; message: string }>) => {
       const { id, message } = action.payload;
-
-      state.messages.push({
+      state.chatList.messages.push({
         id,
         createAt: Date.now(),
         userId: id,
         message,
       });
     },
+
     deleteMessage: (state, action: PayloadAction<number>) => {
-      state.messages = state.messages.filter(({ id }) => id !== action.payload);
+      state.chatList.messages = state.chatList.messages.filter(({ id }) => id !== action.payload);
+    },
+
+    replymessage: (state, action: PayloadAction<{ userName: string; message: string }>) => {
+      const { userName, message } = action.payload;
+      state.reply = { userName, message };
     },
   },
 });
 
-export const { writeMessage, deleteMessage } = chatSlice.actions;
+export const { writeMessage, deleteMessage, replymessage } = chatSlice.actions;
 
 export default chatSlice.reducer;
