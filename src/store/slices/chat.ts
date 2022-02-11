@@ -22,7 +22,7 @@ const chatSlice = createSlice({
       state.chatList.messages.push({
         id,
         createAt: Date.now(),
-        userId: id,
+        userId: 1,
         message,
       });
     },
