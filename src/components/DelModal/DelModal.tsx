@@ -1,12 +1,18 @@
 import React from 'react';
-import { useAppSelector } from 'hooks/useStore';
+import { useAppSelector, useAppDispatch } from 'hooks/useStore';
 import * as S from './DelModal.styled';
+import { setIsOpen } from 'store/slices/modal';
+import { deleteMessage } from 'store/slices/chat';
 
 const DelModal = () => {
+  const dispatch = useAppDispatch();
+
   const isOpen = useAppSelector(state => state.modal.isOpen);
+  const id = useAppSelector(state => state.modal.id);
+  const message = useAppSelector(state => state.modal.message);
 
   const PrintDeleteMessage = (): string => {
-    const deleteMessage = '안녕하세요! 반갑습니다. 사랑해요. 룰루랄라~';
+    const deleteMessage = message;
     if (deleteMessage.length > 10) {
       return deleteMessage.substring(0, 10) + '···';
     } else {
@@ -15,11 +21,12 @@ const DelModal = () => {
   };
 
   const modalClose = () => {
-    console.log('취소버튼 동작');
+    dispatch(setIsOpen(!isOpen));
   };
 
   const delMessage = () => {
-    console.log('삭제');
+    dispatch(deleteMessage(id));
+    dispatch(setIsOpen(!isOpen));
   };
 
   return (
