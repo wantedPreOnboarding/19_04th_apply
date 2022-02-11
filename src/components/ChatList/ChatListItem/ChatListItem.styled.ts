@@ -1,13 +1,15 @@
 import styled from 'styled-components/macro';
+import { ItemProps } from './ChatListItem.type';
 
-export const Item = styled.li`
+export const Item = styled.li<ItemProps>`
   display: flex;
   flex-direction: column;
+  align-items: ${props => props.auth && 'flex-end'};
   width: 70%;
+  padding: 5px 0;
 `;
 
-export const Box = styled.div`
-  width: 100%;
+export const Box = styled.div<ItemProps>`
   display: flex;
   align-items: center;
 `;
