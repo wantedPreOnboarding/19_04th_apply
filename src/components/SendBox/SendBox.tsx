@@ -1,10 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as S from './SendBox.styled';
-import { useAppSelector, useAppDispatch } from '../../hooks/useStore';
+import { useAppSelector, useAppDispatch } from 'hooks/useStore';
+import { writeMessage } from 'store/slices/chat';
+import { generateNextId, enterSubmitCheck, isEmpty, textareaHeightHandler } from 'utils';
 
 const SendBox: React.FunctionComponent = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+  const getMessage = useAppSelector(state => state.chat);
   const [replyMode, setReplyMode] = useState<boolean>(false);
+  const [sendActive, setSendActive] = useState<boolean>(false);
   const [textAreaValue, setTextAreaValue] = useState<string>('');
 
   const dispatch = useAppDispatch();
@@ -17,28 +21,28 @@ const SendBox: React.FunctionComponent = () => {
     event: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLTextAreaElement>,
   ) => {
     event.preventDefault();
-    console.log('submit', textAreaValue);
-    setTextAreaValue('');
+    if (!isEmpty(textAreaValue.replace(/^\s+|\s+$/gm, ''))) {
+      dispatch(writeMessage({ id: generateNextId(getMessage.messages), message: textAreaValue }));
+      setTextAreaValue('');
+      replyMode && setReplyMode(false);
+    }
   };
 
   const keyDownHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === 'Enter' && !event.shiftKey) {
-      event.preventDefault();
-      submitForm(event);
-    }
+    enterSubmitCheck(event) && submitForm(event);
   };
 
   useEffect(() => {
-    if (textareaRef && textareaRef.current) {
-      textareaRef.current.style.height = '0px';
-      const scrollHeight = textareaRef.current.scrollHeight;
-      textareaRef.current.style.height = scrollHeight + 'px';
-    }
+    textareaHeightHandler(textareaRef);
   }, [textAreaValue]);
 
   useEffect(() => {
     replyMode && setTextAreaValue('송현님의답장');
   }, [replyMode]);
+
+  useEffect(() => {
+    textAreaValue.length > 0 ? setSendActive(true) : setSendActive(false);
+  }, [textAreaValue]);
 
   return (
     <S.Wrapper>
@@ -50,7 +54,7 @@ const SendBox: React.FunctionComponent = () => {
           onChange={textAreaChange}
           onKeyDown={keyDownHandler}
         />
-        <S.SendBtn type="submit">작성</S.SendBtn>
+        {sendActive && <S.SendBtn type="submit">작성</S.SendBtn>}
       </S.SendForm>
     </S.Wrapper>
   );
