@@ -16,12 +16,14 @@ export const DelReplyWrapper = styled.div`
     transition: transform 100ms;
   }
 `;
+export const ReplyBtn = styled.button`
+  cursor: pointer;
+`;
 
-export const ReplyButton = styled.img.attrs({
+export const ReplyIcon = styled.img.attrs({
   src: 'assets/images/replyBtn.svg',
 })`
   height: 10px;
-  cursor: pointer;
 `;
 
 export const DeleteButton = styled.img.attrs({
