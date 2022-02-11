@@ -6,12 +6,15 @@ const modalSlice = createSlice({
     isOpen: true,
   },
   reducers: {
-    setisOpen: (state, action: PayloadAction<boolean>) => {
-      state.isOpen = action.payload;
+    setIsOpen: (state, action: PayloadAction<boolean>) => {
+      state.isOpen = true;
+    },
+    setIsClose: (state, action: PayloadAction<boolean>) => {
+      state.isOpen = false;
     },
   },
 });
 
-export const { setisOpen } = modalSlice.actions;
+export const { setIsOpen, setIsClose } = modalSlice.actions;
 
 export default modalSlice.reducer;
