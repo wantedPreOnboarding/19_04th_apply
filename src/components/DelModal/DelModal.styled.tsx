@@ -1,9 +1,13 @@
 import styled from 'styled-components/macro';
 
-export const DelModalWrapper = styled.div`
+export const DelModalWrapper = styled.div<{ isOpen: boolean }>`
+  display: ${props => (props.isOpen ? 'flex' : 'none')};
   width: 100%;
   height: 100%;
   padding: 14px 14px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 `;
 
 export const DelModalWindow = styled.div`
@@ -55,7 +59,7 @@ export const Button = styled.button`
   margin-left: 5px;
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   font-weight: ${({ theme }) => theme.fontWeight.semiStrong};
-  color: #ff505f; //chatPinkyRed theme
+  color: ${({ theme }) => theme.colors.chatWhite};
   background-color: ${({ theme }) => theme.colors.chatTomato};
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   cursor: pointer;
