@@ -12,3 +12,7 @@ export default interface ChatListItemProps {
     message: string;
   };
 }
+
+export interface ItemProps {
+  auth: boolean;
+}
