@@ -11,6 +11,7 @@ declare module 'styled-components' {
       chatRed: string;
       chatLGray: string;
       chatgray: string;
+      chatCheeryBlossom: string;
     };
     fontSize: {
       xs: string;
@@ -18,6 +19,7 @@ declare module 'styled-components' {
       m: string;
       l: string;
       xl: string;
+      xxl: string;
     };
     fontWeight: {
       strong: number;

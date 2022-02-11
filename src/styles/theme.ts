@@ -10,6 +10,7 @@ const theme: DefaultTheme = {
     chatRed: '#D7322D',
     chatLGray: '#cccccc',
     chatgray: '#DAD9D9',
+    chatCheeryBlossom: '#ffd6d6',
   },
   fontSize: {
     xs: '8x',
@@ -17,6 +18,7 @@ const theme: DefaultTheme = {
     m: '12px',
     l: '14px',
     xl: '18px',
+    xxl: '22px',
   },
 
   fontWeight: {
