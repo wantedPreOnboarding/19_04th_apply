@@ -1,13 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { users } from 'data/chat';
+
+const initUser = users[0];
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: {
-    loginUserId: 1,
-    userName: '임수',
-    avatarURL: 'assets/images/defaultUserImg.png',
+  initialState: initUser,
+  reducers: {
+    login: (state, action: PayloadAction<{ userName: string; avatarURL?: string }>) => {
+      const {
+        payload: { userName, avatarURL },
+      } = action;
+      state.userId = 3;
+      state.userName = userName;
+      state.avatarURL = avatarURL ? avatarURL : initUser.avatarURL;
+    },
   },
-  reducers: {},
 });
 
+export const { login } = authSlice.actions;
 export default authSlice.reducer;
