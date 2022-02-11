@@ -61,7 +61,7 @@ const SendBox: React.FunctionComponent = () => {
   }, [textAreaValue]);
 
   useEffect(() => {
-    if (toastMsg) {
+    if (toastMsg && !isEmpted) {
       setTimeout(() => {
         return setToastMsg(''), setIsEmpted(false);
       }, 1300);
