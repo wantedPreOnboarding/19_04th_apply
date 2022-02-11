@@ -2,12 +2,13 @@ import styled from 'styled-components/macro';
 
 export const DelModalWrapper = styled.div<{ isOpen: boolean }>`
   display: ${props => (props.isOpen ? 'flex' : 'none')};
-  width: 100%;
-  height: 100%;
-  padding: 14px 14px;
   position: absolute;
+  width: 100%;
+  padding: 14px 14px;
   top: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
 `;
 
 export const DelModalWindow = styled.div`
@@ -17,6 +18,7 @@ export const DelModalWindow = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.chatTomato};
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   background-color: ${({ theme }) => theme.colors.chatWhite};
+  z-index: 3000;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
 `;
 
