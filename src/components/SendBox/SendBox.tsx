@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import * as S from './SendBox.styled';
 import { useAppSelector, useAppDispatch } from 'hooks/useStore';
-import { writeMessage } from 'store/slices/chat';
+import { writeMessage, replymessage } from 'store/slices/chat';
 import {
   generateNextId,
   enterSubmitCheck,
@@ -15,11 +15,10 @@ const SendBox: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  const getMessage = useAppSelector(state => state.chat.chatList);
-  const reply = useAppSelector(state => state.chat.reply);
-  const replyText = `${reply.userName}\n${reply.message}\n(회신)`;
+  const chatList = useAppSelector(state => state.chat.chatList);
+  const replyMsg = useAppSelector(state => state.chat.reply);
+  const replyText = `${replyMsg.userName}\n${replyMsg.message}\n(회신)`;
 
-  const [replyMode, setReplyMode] = useState<boolean>(false);
   const [sendActive, setSendActive] = useState<boolean>(false);
   const [textAreaValue, setTextAreaValue] = useState<string>('');
   const [isEmpted, setIsEmpted] = useState<boolean>(false);
@@ -29,12 +28,16 @@ const SendBox: React.FunctionComponent = () => {
     setTextAreaValue(event.target.value);
   };
 
+  const sendReplyHandler = (msg: { userName: string; message: string }): void => {
+    dispatch(replymessage(msg));
+  };
+
   const sendMessageHandler = (event?: React.FormEvent<HTMLFormElement>) => {
     event && event.preventDefault();
     if (!isStringEmpty(startEndWhiteSpaceRemove(textAreaValue))) {
-      dispatch(writeMessage({ id: generateNextId(getMessage.messages), message: textAreaValue }));
+      dispatch(writeMessage({ id: generateNextId(chatList.messages), message: textAreaValue }));
       setTextAreaValue('');
-      replyMode && setReplyMode(false);
+      replyMsg && sendReplyHandler({ userName: '', message: '' });
     } else {
       setIsEmpted(true);
       setToastMsg('메세지를 입력해주세요!');
@@ -50,8 +53,8 @@ const SendBox: React.FunctionComponent = () => {
   }, [textAreaValue]);
 
   useEffect(() => {
-    replyMode && setTextAreaValue(replyText);
-  }, [replyMode]);
+    replyMsg.userName && replyMsg.message && setTextAreaValue(replyText);
+  }, [replyMsg]);
 
   useEffect(() => {
     textAreaValue.length > 0 ? setSendActive(true) : setSendActive(false);
@@ -69,6 +72,7 @@ const SendBox: React.FunctionComponent = () => {
     <S.Wrapper>
       <S.Inner>
         {isEmpted && <NoticeToast msg="메세지를 입력해주세요" />}
+
         <S.SendForm onSubmit={sendMessageHandler}>
           <S.TextBox
             value={textAreaValue}
