@@ -17,21 +17,27 @@ const Login = () => {
   };
 
   return (
-    <S.imageInput>
-      {<img alt="imageInput" id="imageInput" src={imageSrc ? imageSrc : avatarUrl} />}
-      <div>
-        <label htmlFor="imageInput">프로필등록</label>
-        <input
-          type="file"
-          name="proOpt-image"
-          id="imageInput"
-          accept="image/*"
-          onChange={event => {
-            readImage(event);
-          }}
-        />
-      </div>
-    </S.imageInput>
+    <S.Wrapper>
+      <S.Inner>
+        {<S.Avatar alt="imageAvatar" id="imageAvatar" src={imageSrc ? imageSrc : avatarUrl} />}
+        <S.ImageInputBox>
+          <S.ImageLabel htmlFor="imageInput">프로필사진 등록</S.ImageLabel>
+          <S.ImageInput
+            id="imageInput"
+            type="file"
+            name="proOpt-image"
+            accept="image/*"
+            onChange={event => {
+              readImage(event);
+            }}
+          />
+        </S.ImageInputBox>
+        <S.NameInputBox>
+          <S.NameInput id="nameInput" placeholder="이름을 입력해주세요"></S.NameInput>
+        </S.NameInputBox>
+        <S.LoginBtn>Login</S.LoginBtn>
+      </S.Inner>
+    </S.Wrapper>
   );
 };
 
