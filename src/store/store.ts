@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { authReducer, chatReducer } from './slices';
+import { authReducer, chatReducer, modalReducer } from './slices';
 
 const store = configureStore({
   reducer: {
     auth: authReducer,
     chat: chatReducer,
+    modal: modalReducer,
   },
 });
 

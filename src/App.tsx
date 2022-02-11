@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { useAppDispatch, useAppSelector } from 'hooks/useStore';
 import { writeMessage, deleteMessage } from 'store/slices/chat';
+import DelReplyBtn from 'components/DelReplyBtn/DelReplyBtn';
 
 const AppLayout = styled.div`
   height: 100vh;
@@ -23,7 +24,9 @@ const PhoneLayout = styled.main`
 const App = () => {
   return (
     <AppLayout>
-      <PhoneLayout></PhoneLayout>
+      <PhoneLayout>
+        <DelReplyBtn />
+      </PhoneLayout>
     </AppLayout>
   );
 };
