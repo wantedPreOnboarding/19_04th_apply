@@ -4,21 +4,15 @@ import { useAppSelector } from 'hooks/useStore';
 import ChatListItem from './ChatListItem/ChatListItem';
 
 const ChatList = () => {
-  // const chatList = useAppSelector(state => state.chat);
-  const list = [];
+  const auth = useAppSelector(state => state.auth)
+  const users = useAppSelector(state => state.chat.users)
+  const messages = useAppSelector(state => state.chat.messages);
+  const addAuth = users.map((user) => user.id === auth.loginUserId ? { ...user, auth: true } : { ...user, auth: false });
+  const roomData = messages.map((message) => ({ ...message, user: addAuth.filter(users => users.id === message.userId)[0] }));
+
   return (
     <S.Wrapper>
-      {/* {list.map(item => <ChatListItem key='id' chat={item} />)} */}
-      {/* <S.Item>
-        <S.Box>
-          <S.BoxImg>
-            <S.Profile src='https://i.postimg.cc/zfgj317C/profile.jpg' alt='profile img' />
-          </S.BoxImg>
-          <S.Name>송현</S.Name>
-          <S.Data>2022-02-19 21:15</S.Data>
-        </S.Box>
-        <S.BoxText>안녕</S.BoxText>
-      </S.Item> */}
+      {roomData.map(item => <ChatListItem key={item.id} item={item} />)}
     </S.Wrapper>
   );
 }

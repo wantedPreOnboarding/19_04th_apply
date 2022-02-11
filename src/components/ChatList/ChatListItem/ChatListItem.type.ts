@@ -1,4 +1,14 @@
 export default interface ChatListItemProps {
-  id: number;
-  img: string;
+  item: {
+    id: number;
+    userId: number;
+    createAt: number;
+    message: string;
+    user: {
+      id: number;
+      auth: boolean;
+      userName: string;
+      avatarURL: string;
+    };
+  };
 }
