@@ -3,7 +3,6 @@ import * as S from './ChatListItem.styled';
 import ChatListItemProps from './ChatListItem.type';
 
 const ChatListItem = ({ item }: ChatListItemProps) => {
-
   const formatDate = (dateNum: number) => {
     const itemDate = new Date(dateNum);
     const setMonth = itemDate.getMonth() + 1
@@ -12,8 +11,8 @@ const ChatListItem = ({ item }: ChatListItemProps) => {
   }
 
   return (
-    <S.Item>
-      <S.Box>
+    <S.Item auth={item.user.auth}>
+      <S.Box auth={item.user.auth}>
         <S.BoxImg>
           <S.Profile src={item.user.avatarURL} alt={item.user.userName} />
         </S.BoxImg>
