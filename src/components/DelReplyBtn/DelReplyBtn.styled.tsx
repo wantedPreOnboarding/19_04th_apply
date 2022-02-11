@@ -23,12 +23,13 @@ export const ReplyBtn = styled.button`
 export const ReplyIcon = styled.img.attrs({
   src: 'assets/images/replyBtn.svg',
 })`
-  height: 10px;
+  margin-top: 3px;
+  height: 9px;
 `;
 
 export const DeleteButton = styled.img.attrs({
   src: 'assets/images/deleteBtn.svg',
 })`
-  height: 11px;
+  height: 10px;
   cursor: pointer;
 `;
