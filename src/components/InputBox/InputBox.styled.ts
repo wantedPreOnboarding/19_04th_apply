@@ -11,7 +11,7 @@ export const Inner = styled.div`
   width: 100%;
   height: auto;
   background: ${props => props.theme.colors.chatWhite};
-  border-top: ${props => props.theme.border};
+  border-top: 1px solid ${props => props.theme.colors.chatLGray};
   border: 1px solid ${props => props.theme.borderRadius.normal};
   border-bottom-right-radius: ${props => props.theme.borderRadius.normal};
   border-bottom-left-radius: ${props => props.theme.borderRadius.normal};
