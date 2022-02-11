@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { users, messages } from 'data/chat';
-import { stringify } from 'querystring';
 
 const chatSlice = createSlice({
   name: 'chat',
