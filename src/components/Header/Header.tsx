@@ -7,12 +7,16 @@ const Header = (): ReactElement => {
   const userNumber = useAppSelector(state => state.chat.chatList.users).length;
   return (
     <S.Header>
-      <img src={`${process.env.REACT_APP_ASSET_PATH}/arrowIcon.svg`} />
+      <button>
+        <img src={`${process.env.REACT_APP_ASSET_PATH}/arrowIcon.svg`} />
+      </button>
       <h1>
         {title}
         {` (${userNumber})`}
       </h1>
-      <img src={`${process.env.REACT_APP_ASSET_PATH}/moreIcon.svg`} />
+      <button>
+        <img src={`${process.env.REACT_APP_ASSET_PATH}/moreIcon.svg`} />
+      </button>
     </S.Header>
   );
 };
