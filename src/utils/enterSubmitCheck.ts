@@ -1,4 +1,4 @@
-const enterSubmitCheck = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+const enterSubmitCheck = (event: React.KeyboardEvent<HTMLElement>) => {
   if (event.key === 'Enter' && !event.shiftKey) {
     event.preventDefault();
     return true;
