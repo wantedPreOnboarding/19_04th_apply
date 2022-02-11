@@ -1,17 +1,17 @@
 const users = [
   {
-    id: 1,
+    userId: 1,
     userName: '임수',
     avatarURL: 'assets/images/defaultUserImg.png',
   },
   {
-    id: 2,
-    userName: '임수',
+    userId: 2,
+    userName: '송현',
     avatarURL: 'assets/images/defaultUserImg.png',
   },
   {
-    id: 3,
-    userName: '임수',
+    userId: 3,
+    userName: '빈다',
     avatarURL: 'assets/images/defaultUserImg.png',
   },
 ];
