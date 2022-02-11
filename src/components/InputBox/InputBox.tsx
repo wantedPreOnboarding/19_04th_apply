@@ -34,12 +34,12 @@ const SendBox: React.FunctionComponent = () => {
 
   const sendMessageHandler = (event?: React.FormEvent<HTMLFormElement>) => {
     event && event.preventDefault();
+
     if (!isStringEmpty(startEndWhiteSpaceRemove(textAreaValue))) {
       dispatch(writeMessage({ id: generateNextId(chatList.messages), message: textAreaValue }));
       setTextAreaValue('');
       replyMsg && sendReplyHandler({ userName: '', message: '' });
     } else {
-      setIsEmpted(true);
       setToastMsg('메세지를 입력해주세요!');
     }
   };
@@ -62,10 +62,12 @@ const SendBox: React.FunctionComponent = () => {
 
   useEffect(() => {
     if (toastMsg && !isEmpted) {
+      setIsEmpted(true);
       setTimeout(() => {
-        return setToastMsg(''), setIsEmpted(false);
+        setToastMsg('');
+        return setIsEmpted(false);
       }, 1300);
-    }
+    } else return;
   }, [toastMsg]);
 
   return (
