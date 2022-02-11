@@ -11,10 +11,12 @@ const authSlice = createSlice({
       const {
         payload: { userName, avatarURL },
       } = action;
-
-      state = { userId: 3, userName, avatarURL: avatarURL ? avatarURL : initUser.avatarURL };
+      state.userId = 3;
+      state.userName = userName;
+      state.avatarURL = avatarURL ? avatarURL : initUser.avatarURL;
     },
   },
 });
 
+export const { login } = authSlice.actions;
 export default authSlice.reducer;
