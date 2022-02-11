@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  border: 1px solid tomato;
-  margin: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+`;
+export const Inner = styled.div`
+  position: relative;
   padding: 10px;
-  width: 400px;
+  width: 100%;
   height: auto;
+  background: ${props => props.theme.colors.chatWhite};
   border-top: ${props => props.theme.border};
-  border-radius: ${props => props.theme.borderRadius.normal};
+  border: 1px solid ${props => props.theme.borderRadius.normal};
+  border-bottom-right-radius: ${props => props.theme.borderRadius.normal};
+  border-bottom-left-radius: ${props => props.theme.borderRadius.normal};
 `;
 
 export const SendForm = styled.form`
