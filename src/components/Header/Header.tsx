@@ -3,8 +3,8 @@ import * as S from './Header.styled';
 import { useAppSelector } from 'hooks/useStore';
 
 const Header = (): ReactElement => {
-  const title = useAppSelector(state => state.chat.title);
-  const userNumber = useAppSelector(state => state.chat.users).length;
+  const title = useAppSelector(state => state.chat.chatList.title);
+  const userNumber = useAppSelector(state => state.chat.chatList.users).length;
   return (
     <S.Header>
       <img src={`${process.env.REACT_APP_ASSET_PATH}/arrowIcon.svg`} />
