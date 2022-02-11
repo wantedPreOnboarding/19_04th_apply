@@ -2,7 +2,13 @@ import React, { useRef, useState, useEffect } from 'react';
 import * as S from './SendBox.styled';
 import { useAppSelector, useAppDispatch } from 'hooks/useStore';
 import { writeMessage } from 'store/slices/chat';
-import { generateNextId, enterSubmitCheck, isEmpty, textareaHeightHandler } from 'utils';
+import {
+  generateNextId,
+  enterSubmitCheck,
+  isEmpty,
+  textareaHeightHandler,
+  startEndWhiteSpceRemove,
+} from 'utils';
 
 const SendBox: React.FunctionComponent = () => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -21,7 +27,7 @@ const SendBox: React.FunctionComponent = () => {
     event: React.FormEvent<HTMLFormElement> | React.KeyboardEvent<HTMLTextAreaElement>,
   ) => {
     event.preventDefault();
-    if (!isEmpty(textAreaValue.replace(/^\s+|\s+$/gm, ''))) {
+    if (!isEmpty(startEndWhiteSpceRemove(textAreaValue))) {
       dispatch(writeMessage({ id: generateNextId(getMessage.messages), message: textAreaValue }));
       setTextAreaValue('');
       replyMode && setReplyMode(false);
