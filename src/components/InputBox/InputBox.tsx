@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import * as S from './SendBox.styled';
+import * as S from './InputBox.styled';
 import { useAppSelector, useAppDispatch } from 'hooks/useStore';
 import { writeMessage, replymessage } from 'store/slices/chat';
 import {

@@ -16,6 +16,7 @@ to{
     opacity:0;
 }
 `;
+
 export const Wrapper = styled.div`
   position: absolute;
   top: -50px;

@@ -10,6 +10,19 @@ const ChatRoom = (): ReactElement => {
 
   useScrollBottom(chatRoomRef.current);
 
-  return <S.ChatRoom ref={chatRoomRef}></S.ChatRoom>;
+  return (
+    <S.ChatRoom ref={chatRoomRef}>
+      {useAppSelector(state => state.chat.chatList.messages).map(({ id, message }) => (
+        <S.Message key={id}>{message}</S.Message>
+      ))}
+      <button
+        onClick={() => {
+          dispatch(writeMessage({ id: 10, message: '123' }));
+        }}
+      >
+        추가
+      </button>
+    </S.ChatRoom>
+  );
 };
 export default ChatRoom;
