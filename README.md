@@ -131,6 +131,7 @@ interface Auth {
 <details>
 <summary>Users(펼쳐보기)</summary>
 <div markdown="1">
+
 - Users: 채팅방에 참여한 유저 정보를 담은 상태
 
 ```tsx
