@@ -3,8 +3,7 @@ import styled from 'styled-components/macro';
 export const DelReplyWrapper = styled.div`
   display: flex;
   width: 32px;
-  height: 15px;
-  margin: 0 3px;
+  height: 16px;
   padding: 0 4px;
   background-color: ${({ theme }) => theme.colors.chatgray};
   border-radius: 5px;
@@ -21,15 +20,15 @@ export const ReplyBtn = styled.button`
 `;
 
 export const ReplyIcon = styled.img.attrs({
-  src: `${process.env.REACT_APP_ASSET_PATH}/replyBtn.svg}`,
+  src: `${process.env.REACT_APP_ASSET_PATH}/replyBtn.svg`,
 })`
-  margin-top: 3px;
-  height: 9px;
+  margin-top: 4px;
+  height: 8px;
 `;
 
 export const DeleteButton = styled.img.attrs({
-  src: `${process.env.REACT_APP_ASSET_PATH}/deleteBtn.svg}`,
+  src: `${process.env.REACT_APP_ASSET_PATH}/deleteBtn.svg`,
 })`
-  height: 10px;
+  height: 9px;
   cursor: pointer;
 `;
