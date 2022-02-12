@@ -15,7 +15,9 @@ const ChatListItem = ({ item }: ChatListItemProps) => {
         <S.Data>{formattedDate(item.createAt)}</S.Data>
       </S.Box>
       <S.BoxTextWrapper>
-        <S.BoxText>{item.message}</S.BoxText>
+        <S.BoxText>
+          <pre>{item.message}</pre>
+        </S.BoxText>
         <S.BoxButton>
           <DelReplyBtn item={item} />
         </S.BoxButton>
