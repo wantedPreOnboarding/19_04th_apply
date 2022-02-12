@@ -1,9 +1,18 @@
 import styled, { keyframes } from 'styled-components/macro';
-
+import NoticeToastProps from './NoticeToast.type';
 const fadeIn = keyframes`
 from {
   opacity:0; 
   top:0px;
+}
+to{
+    opacity:1;
+}
+`;
+const fadeInB = keyframes`
+from {
+  opacity:0; 
+  bottom:0;
 }
 to{
     opacity:1;
@@ -17,9 +26,10 @@ to{
 }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<NoticeToastProps>`
   position: absolute;
-  top: -50px;
+  ${props => props.top && `top:${props.top}`};
+  ${props => props.bottom && `bottom:${props.bottom}`};
   left: 0;
   padding: 10px;
   width: 100%;
@@ -29,9 +39,9 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   visibility: visible;
-  animation: ${fadeIn} 0.5s, ${fadeOut} 0.5s 1s;
-  -webkit-animation: ${fadeIn} 0.5s, ${fadeOut} 0.5s 1s;
-  z-index: -1;
+  animation: ${props => (props.bottom ? fadeInB : fadeIn)} 0.5s, ${fadeOut} 0.5s 1s;
+  -webkit-animation: ${props => (props.bottom ? fadeInB : fadeIn)} 0.5s, ${fadeOut} 0.5s 1s;
+  z-index: 1;
 `;
 export const Text = styled.span`
   font-size: ${props => props.theme.fontSize.l};
