@@ -42,6 +42,10 @@ export const Data = styled.span`
   color: #000;
 `;
 
+export const BoxTextWrapper = styled.div`
+  display: flex;
+`;
+
 export const BoxText = styled.div`
   margin-top: 5px;
   padding: 15px 20px;
@@ -49,4 +53,12 @@ export const BoxText = styled.div`
   font-size: ${({ theme }) => theme.fontSize.s};
   background: ${({ theme }) => theme.colors.chatPink};
   color: ${({ theme }) => theme.colors.chatBurgundy};
+  align-self: flex-end;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+`;
+
+export const BoxButton = styled.div`
+  width: 32px;
+  margin: 0 7px 1px 7px;
+  align-self: flex-end;
 `;
