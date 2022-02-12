@@ -1,11 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { users } from 'data/chat';
 
-const initUser = users[0];
+interface Auth {
+  userId: number | null;
+  userName: string | null;
+  avatarURL: string;
+}
+
+const initAuth: Auth = {
+  userId: null,
+  userName: null,
+  avatarURL: `${process.env.REACT_APP_ASSET_PATH}/defaultUserImg.png`,
+};
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: initUser,
+  initialState: initAuth,
   reducers: {
     login: (state, action: PayloadAction<{ userName: string; avatarURL?: string }>) => {
       const {
@@ -13,10 +22,13 @@ const authSlice = createSlice({
       } = action;
       state.userId = 3;
       state.userName = userName;
-      state.avatarURL = avatarURL ? avatarURL : initUser.avatarURL;
+      state.avatarURL = avatarURL ? avatarURL : initAuth.avatarURL;
+    },
+    logout: () => {
+      return initAuth;
     },
   },
 });
 
-export const { login } = authSlice.actions;
+export const { login, logout } = authSlice.actions;
 export default authSlice.reducer;
