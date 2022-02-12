@@ -9,7 +9,7 @@ import {
   textareaHeightHandler,
   startEndWhiteSpaceRemove,
 } from 'utils';
-import NoticeToast from './NoticeToast';
+import { NoticeToast } from 'components';
 
 const SendBox: React.FunctionComponent = () => {
   const dispatch = useAppDispatch();
@@ -73,15 +73,14 @@ const SendBox: React.FunctionComponent = () => {
   return (
     <S.Wrapper>
       <S.Inner>
-        {isEmpted && <NoticeToast msg="메세지를 입력해주세요" />}
-
+        {isEmpted && <NoticeToast top="-50px" msg="메세지를 입력해주세요" />}
         <S.SendForm onSubmit={sendMessageHandler}>
           <S.TextBox
             value={textAreaValue}
             placeholder="write a message"
             ref={textareaRef}
             onChange={textAreaChange}
-            onKeyDown={keyDownHandler}
+            onKeyUp={keyDownHandler}
           />
           {sendActive && <S.SendBtn type="submit">작성</S.SendBtn>}
         </S.SendForm>

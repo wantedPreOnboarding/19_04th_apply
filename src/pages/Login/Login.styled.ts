@@ -180,4 +180,5 @@ export const Footer = styled.footer`
   height: 50px;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   background-color: ${({ theme }) => theme.colors.chatWhite};
+  z-index: 2;
 `;
