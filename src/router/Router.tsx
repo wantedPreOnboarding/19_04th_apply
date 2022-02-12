@@ -15,7 +15,7 @@ const PrivateRoute = ({ children }: SCProps) => {
         ) : (
           <R.Redirect
             to={{
-              pathname: '/login',
+              pathname: '/',
             }}
           />
         )
@@ -34,6 +34,11 @@ const Router = () => {
         <R.Route exact path="/">
           <Login />
         </R.Route>
+        <R.Redirect
+          to={{
+            pathname: '/ChatRoom/:roomId',
+          }}
+        />
       </R.Switch>
     </R.BrowserRouter>
   );
