@@ -13,12 +13,12 @@ const theme: DefaultTheme = {
     chatCheeryBlossom: '#ffd6d6',
   },
   fontSize: {
-    xs: '8x',
-    s: '10px',
-    m: '12px',
-    l: '14px',
-    xl: '18px',
-    xxl: '22px',
+    xs: '10x',
+    s: '12px',
+    m: '14px',
+    l: '16px',
+    xl: '20px',
+    xxl: '24px',
   },
 
   fontWeight: {
