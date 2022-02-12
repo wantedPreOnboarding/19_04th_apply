@@ -3,6 +3,7 @@ import * as R from 'react-router-dom';
 import { ChatRoom, Login } from 'pages';
 import { SCProps } from 'types/props';
 import { useAppSelector } from 'hooks';
+import { Header } from 'components';
 
 const PrivateRoute = ({ children }: SCProps) => {
   const auth = useAppSelector(state => state.auth);
@@ -15,7 +16,7 @@ const PrivateRoute = ({ children }: SCProps) => {
         ) : (
           <R.Redirect
             to={{
-              pathname: '/',
+              pathname: '/ChatRoom/1',
             }}
           />
         )
@@ -27,6 +28,7 @@ const PrivateRoute = ({ children }: SCProps) => {
 const Router = () => {
   return (
     <R.BrowserRouter>
+      <Header />
       <R.Switch>
         <PrivateRoute path="/ChatRoom/:roomId">
           <ChatRoom />
