@@ -30,7 +30,7 @@ const ChatListItem = ({ item }: ChatListItemProps) => {
         onMouseLeave={msgLeaveHandler}
       >
         <S.BoxText>
-          {item.message}
+          <pre>{item.message}</pre>
           <S.BoxButton isMsgEnter={isMsgEnter}>
             <DelReplyBtn item={item} />
           </S.BoxButton>
