@@ -1,4 +1,4 @@
-import React, { ReactElement, useRef } from 'react';
+import React, { ReactElement, useRef, useState } from 'react';
 import { useAppSelector, useScrollBottom } from 'hooks';
 import * as S from './ChatRoom.styled';
 import ChatList from 'components/ChatList/ChatList';
@@ -9,8 +9,21 @@ import DelModal from 'components/DelModal/DelModal';
 const ChatRoom = (): ReactElement => {
   const chatRoomRef = useRef<HTMLDivElement>(null);
   const messages = useAppSelector(state => state.chat.chatList.messages);
+  const [isScroll, setIsScroll] = useState(true);
 
-  useScrollBottom(chatRoomRef.current, [messages]);
+  const scrollOFF = () => {
+    setIsScroll(false);
+  };
+
+  const scrollON = () => {
+    setIsScroll(true);
+  };
+
+  const scrollValidator = () => {
+    return isScroll;
+  };
+
+  useScrollBottom(chatRoomRef.current, [messages], !scrollValidator());
 
   return (
     <>
@@ -19,7 +32,7 @@ const ChatRoom = (): ReactElement => {
       </S.ChatRoom>
       <InputBox />
       <Portal>
-        <DelModal />
+        <DelModal extraHandler={scrollOFF} />
       </Portal>
     </>
   );

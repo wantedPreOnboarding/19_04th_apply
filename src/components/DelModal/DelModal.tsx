@@ -4,8 +4,9 @@ import * as S from './DelModal.styled';
 import { setIsOpen } from 'store/slices/modal';
 import { deleteMessage } from 'store/slices/chat';
 import sliceMessage from 'utils/sliceMessage';
+import { DelModalProps } from './DelModal.type';
 
-const DelModal = () => {
+const DelModal = ({ extraHandler }: DelModalProps) => {
   const dispatch = useAppDispatch();
 
   const isOpen = useAppSelector(state => state.modal.isOpen);
@@ -19,6 +20,7 @@ const DelModal = () => {
   const delMessage = () => {
     dispatch(deleteMessage(id));
     dispatch(setIsOpen(!isOpen));
+    extraHandler();
   };
 
   return (
