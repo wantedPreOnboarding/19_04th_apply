@@ -5,14 +5,6 @@ import React from 'react';
 import Router from 'router/Router';
 
 const App = () => {
-  return (
-    <>
-      <Header />
-      <Router />
-      <Portal>
-        <DelModal />
-      </Portal>
-    </>
-  );
+  return <Router />;
 };
 export default App;
