@@ -23,6 +23,7 @@ const DelModal = () => {
 
   return (
     <S.DelModalWrapper isOpen={isOpen}>
+      <S.DelModalBackground onClick={modalClose} />
       <S.DelModalWindow>
         <S.DelModalH1>메시지 삭제</S.DelModalH1>
         <S.DelContentBox>{sliceMessage(message, 10)}</S.DelContentBox>
