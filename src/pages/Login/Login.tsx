@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import * as S from './Login.styled';
-import { useAppSelector, useAppDispatch } from 'hooks/useStore';
+import { useAppDispatch } from 'hooks/useStore';
 import { login } from 'store/slices/auth';
-<<<<<<< HEAD
-=======
 import { Link } from 'react-router-dom';
->>>>>>> b8a8746a42a818701650ce29909d551f32bf95e3
 
 const Login = () => {
   const dispatch = useAppDispatch();
   const [imageSrc, setImageSrc] = useState<string>('');
+  const [userName, setUserName] = useState<string>('');
+
   const readImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setImageSrc(URL.createObjectURL(event.target.files[0]));
-      dispatch(
-        login({ userName: '김태리', avatarURL: URL.createObjectURL(event.target.files[0]) }),
-      );
     }
+  };
+
+  const sendInfohandler = () => {
+    dispatch(login({ userName: userName, avatarURL: imageSrc }));
+  };
+
+  const userNameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUserName(event.target.value);
   };
 
   return (
@@ -32,7 +36,7 @@ const Login = () => {
       </S.Logo>
       <S.Header>
         <span>Hello 👋 Sweeter!</span>
-      </S.Header>{' '}
+      </S.Header>
       <S.HeadMenu>
         {imageSrc ? (
           <S.Avatar alt="imageAvatar" id="imageAvatar" src={imageSrc} />
@@ -58,21 +62,21 @@ const Login = () => {
           />
         </S.MenuBox>
         <S.MenuBox>
-          <S.NameInput id="nameInput" placeholder="이름을 입력해주세요"></S.NameInput>
-<<<<<<< HEAD
+          <S.NameInput
+            id="nameInput"
+            placeholder="이름을 입력해주세요"
+            onChange={event => {
+              userNameHandler(event);
+            }}
+          ></S.NameInput>
         </S.MenuBox>
         <S.MenuBox>
-          <S.LoginBtn>Login</S.LoginBtn>
+          <Link to="/ChatRoom/1">
+            <S.LoginBtn onClick={sendInfohandler}>Login</S.LoginBtn>
+          </Link>
         </S.MenuBox>
       </S.Menu>
       <S.Footer>s w e e t</S.Footer>
-=======
-        </S.NameInputBox>
-        <Link to="/ChatRoom/1">
-          <S.LoginBtn>Login</S.LoginBtn>
-        </Link>
-      </S.Inner>
->>>>>>> b8a8746a42a818701650ce29909d551f32bf95e3
     </S.Wrapper>
   );
 };

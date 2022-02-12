@@ -23,12 +23,14 @@ export const Logo = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${props => props.theme.fontSize.xl};
+  font-size: ${props => props.theme.fontSize.l};
+  font-weight: ${props => props.theme.fontWeight.semiStrong};
   background: ${props => props.theme.colors.chatWhite};
   color: ${props => props.theme.colors.chatBlack};
   border-radius: ${props => props.theme.borderRadius.normal};
   z-index: 1000;
   span {
+    margin-left: 5px;
   }
 `;
 
