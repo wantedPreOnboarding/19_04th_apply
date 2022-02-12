@@ -52,7 +52,7 @@
 
 ## 5. 🌈 디자인 링크
 
-[피그마 디자인 바로가기](https://www.figma.com/file/LYhssxBbJTYhLQCtvdNITP/swift-massenger?node-id=64%3A350)
+[피그마 디자인 바로가기](https://www.figma.com/file/LYhssxBbJTYhLQCtvdNITP/swift-massenger?node-id=64%3A110)
 
 ## 6. 💿 설치 및 실행 방법
 
