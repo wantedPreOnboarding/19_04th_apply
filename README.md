@@ -82,11 +82,15 @@ $ yarn start
 ## 7. 🛠️ 기술 스택
 
 <div>
-  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
 </div>
 
 <div>
-  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/-typescript-blue?style=for-the-badge"/>
+</div>
+
+<div>
+  <img src="https://img.shields.io/badge/-styled--Components-red?style=for-the-badge"/>
 </div>
 
 <div>
