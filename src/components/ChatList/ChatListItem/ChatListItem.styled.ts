@@ -35,11 +35,15 @@ export const Name = styled.strong`
 `;
 
 export const Data = styled.span`
-  margin-left: auto;
+  margin-left: 10px;
   font-size: 8px;
   font-size: ${({ theme }) => theme.fontSize.xs};
   font-family: Roboto;
   color: #000;
+`;
+
+export const BoxTextWrapper = styled.div`
+  display: flex;
 `;
 
 export const BoxText = styled.div`
@@ -49,4 +53,12 @@ export const BoxText = styled.div`
   font-size: ${({ theme }) => theme.fontSize.s};
   background: ${({ theme }) => theme.colors.chatPink};
   color: ${({ theme }) => theme.colors.chatBurgundy};
+  align-self: flex-end;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+`;
+
+export const BoxButton = styled.div`
+  width: 32px;
+  margin: 0 7px 1px 7px;
+  align-self: flex-end;
 `;

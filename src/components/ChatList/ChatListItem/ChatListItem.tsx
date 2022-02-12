@@ -1,6 +1,7 @@
 import React from 'react';
 import * as S from './ChatListItem.styled';
 import ChatListItemProps from './ChatListItem.type';
+import DelReplyBtn from 'components/DelReplyBtn/DelReplyBtn';
 import { formattedDate } from 'utils';
 
 const ChatListItem = ({ item }: ChatListItemProps) => {
@@ -13,7 +14,12 @@ const ChatListItem = ({ item }: ChatListItemProps) => {
         <S.Name>{item.user.userName}</S.Name>
         <S.Data>{formattedDate(item.createAt)}</S.Data>
       </S.Box>
-      <S.BoxText>{item.message}</S.BoxText>
+      <S.BoxTextWrapper>
+        <S.BoxText>{item.message}</S.BoxText>
+        <S.BoxButton>
+          <DelReplyBtn item={item} />
+        </S.BoxButton>
+      </S.BoxTextWrapper>
     </S.Item>
   );
 };
