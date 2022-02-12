@@ -43,11 +43,11 @@
 
 ## 3. 🔗 배포 링크
 
-[프로젝트 링크 바로가기]()
+[프로젝트 링크 바로가기](https://switchat.netlify.app/)
 
 ## 4. 📄 협업 문서
 
-[프로젝트 노션 바로가기]()
+[프로젝트 노션 바로가기](https://smiling-player-37b.notion.site/2-2-6ea59fa7133d47dd9f75ed9ba8724206)
 
 ## 5. 👩‍💻 기능 목록 명세
 
