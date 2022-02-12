@@ -42,7 +42,7 @@ export const Data = styled.span`
   color: #000;
 `;
 
-export const BoxTextWrapper = styled.div<ItemProps>`
+export const BoxTextWrapper = styled.div`
   display: flex;
   padding: 5px 0;
   animation: fadeIn 0.3s ease-in-out;
