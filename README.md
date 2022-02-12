@@ -111,11 +111,11 @@
 
 #### 1. 7. 전역 상태 정의
 
-- Auth: 로그인 유저의 정보를 담은 상태
-
 <details>
 <summary>Auth(펼쳐보기)</summary>
 <div markdown="1">
+
+- Auth: 로그인 유저의 정보를 담은 상태
 
 ```tsx
 interface Auth {
