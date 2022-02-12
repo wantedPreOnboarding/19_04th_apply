@@ -100,6 +100,7 @@ export const MenuBox = styled.section`
   &:hover:last-child {
     background-color: ${({ theme }) => theme.colors.chatWhite};
   }
+  transition: all 0.2s ease-in-out;
 `;
 
 export const ImageLabel = styled.label`
@@ -144,6 +145,7 @@ export const LoginBtn = styled.button`
     background: ${props => props.theme.colors.chatTomato};
     color: ${({ theme }) => theme.colors.chatWhite};
   }
+  transition: all 0.2s ease-in-out;
 `;
 
 export const Footer = styled.footer`
