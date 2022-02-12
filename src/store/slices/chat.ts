@@ -21,7 +21,7 @@ const chatSlice = createSlice({
       state.chatList.messages.push({
         id,
         createAt: Date.now(),
-        userId: 1,
+        userId: 3,
         message,
       });
     },
@@ -34,9 +34,17 @@ const chatSlice = createSlice({
       const { userName, message } = action.payload;
       state.reply = { userName, message };
     },
+
+    changeUserInfo: (state, action: PayloadAction<{ userName: string; avatarURL?: string }>) => {
+      const {
+        payload: { userName, avatarURL },
+      } = action;
+      state.chatList.users[2].userName = userName;
+      state.chatList.users[2].avatarURL = avatarURL ? avatarURL : state.chatList.users[2].avatarURL;
+    },
   },
 });
 
-export const { writeMessage, deleteMessage, replymessage } = chatSlice.actions;
+export const { writeMessage, deleteMessage, replymessage, changeUserInfo } = chatSlice.actions;
 
 export default chatSlice.reducer;
