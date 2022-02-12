@@ -135,6 +135,12 @@ export const NameInput = styled.input`
   font-weight: ${props => props.theme.fontWeight.semiStrong};
 `;
 
+export const LoginMenu = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 export const LoginBtn = styled.button`
   border: 1px solid ${props => props.theme.colors.chatTomato};
   border-radius: 20px;
@@ -149,7 +155,20 @@ export const LoginBtn = styled.button`
   }
   transition: all 0.2s ease-in-out;
 `;
-
+export const GoBackBtn = styled.button`
+  background: ${props => props.theme.colors.chatTomato};
+  color: ${props => props.theme.colors.chatWhite};
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: ${props => props.theme.fontSize.xl};
+  font-weight: ${props => props.theme.fontWeight.semiStrong};
+  &:hover {
+    filter: brightness(90%);
+  }
+  transition: all 0.2s ease-in-out;
+`;
 export const Footer = styled.footer`
   position: absolute;
   bottom: 0;

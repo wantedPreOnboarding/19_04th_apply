@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import * as S from './ChatList.styled';
 import { useAppSelector } from 'hooks/useStore';
 import ChatListItem from './ChatListItem/ChatListItem';
@@ -23,4 +23,4 @@ const ChatList = () => {
     </S.Wrapper>
   );
 };
-export default ChatList;
+export default forwardRef(ChatList);
