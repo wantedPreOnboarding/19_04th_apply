@@ -148,10 +148,10 @@ type UserS = User[];
 </details>
 
 <details>
-<summary>Message(펼쳐보기)</summary>
+<summary>Messages(펼쳐보기)</summary>
 <div markdown="1">
 
-- message: 채팅방에서 대화한 메세지를 담은 상태
+- messages: 채팅방에서 대화한 메세지를 담은 상태
 
 ```tsx
 interface Message {
