@@ -5,15 +5,6 @@ import DelReplyBtn from 'components/DelReplyBtn/DelReplyBtn';
 import { formattedDate } from 'utils';
 
 const ChatListItem = ({ item }: ChatListItemProps) => {
-  const formatDate = (dateNum: number) => {
-    const itemDate = new Date(dateNum);
-    const setMonth = itemDate.getMonth() + 1;
-    const printDate = `${itemDate.getFullYear()}-${'0' + setMonth}.${
-      itemDate.getDate() + 1
-    } ${itemDate.getHours()}:${itemDate.getMinutes()}`;
-    return printDate;
-  };
-
   return (
     <S.Item auth={item.user.auth}>
       <S.Box auth={item.user.auth}>
