@@ -1,9 +1,7 @@
 import { useLayoutEffect, useState } from 'react';
-import { useAppSelector } from './useStore';
 
-const useScrollBottom = ($el?: HTMLElement | null) => {
+const useScrollBottom = ($el?: HTMLElement | null, dependencies: unknown[] = []) => {
   const [initElement, setInitElement] = useState<boolean | null>(false);
-  const dispatch = useAppSelector(state => state.chat.chatList.messages);
 
   const handleScroll = () => {
     if (!$el) {
@@ -13,7 +11,7 @@ const useScrollBottom = ($el?: HTMLElement | null) => {
     }
   };
 
-  useLayoutEffect(handleScroll, [dispatch, $el?.scrollHeight, initElement]);
+  useLayoutEffect(handleScroll, [...dependencies, $el?.scrollHeight, initElement]);
 };
 
 export default useScrollBottom;
