@@ -6,7 +6,7 @@ export const DelModalWrapper = styled.div<{ isOpen: boolean }>`
   width: 100%;
   top: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 3;
 `;
 
 export const DelModalBackground = styled.div`
@@ -14,7 +14,7 @@ export const DelModalBackground = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 2;
+  z-index: 4;
 `;
 
 export const DelModalWindow = styled.div`

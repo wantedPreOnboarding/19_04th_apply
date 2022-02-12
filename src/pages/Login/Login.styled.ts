@@ -157,7 +157,7 @@ export const LoginBtn = styled.button`
 `;
 export const LogoutBtn = styled.button`
   background: ${props => props.theme.colors.chatWhite};
-  border: 2px solid ${({ theme }) => theme.colors.chatTomato};
+  border: 3px solid ${({ theme }) => theme.colors.chatTomato};
   border-radius: 20px;
   margin-top: 20px;
   width: 200px;
@@ -182,4 +182,9 @@ export const Footer = styled.footer`
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   background-color: ${({ theme }) => theme.colors.chatWhite};
   z-index: 2;
+`;
+export const ReturnIcon = styled.img`
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
 `;

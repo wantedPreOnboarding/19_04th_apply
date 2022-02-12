@@ -34,6 +34,7 @@ export const TextBox = styled.textarea`
   padding: 10px 5px;
   overflow: auto;
   z-index: 2;
+  font-size: ${props => props.theme.fontSize.m};
 `;
 
 export const SendBtn = styled.button`

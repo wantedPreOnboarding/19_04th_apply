@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, ReactElement } from 'react';
 import * as S from './InputBox.styled';
 import { useAppSelector, useAppDispatch } from 'hooks/useStore';
 import { writeMessage, replymessage } from 'store/slices/chat';
@@ -11,7 +11,7 @@ import {
 } from 'utils';
 import { NoticeToast } from 'components';
 
-const SendBox: React.FunctionComponent = () => {
+const SendBox = ({ scrollON }: { scrollON: () => void }): ReactElement => {
   const dispatch = useAppDispatch();
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -34,8 +34,8 @@ const SendBox: React.FunctionComponent = () => {
 
   const sendMessageHandler = (event?: React.FormEvent<HTMLFormElement>) => {
     event && event.preventDefault();
-
     if (!isStringEmpty(startEndWhiteSpaceRemove(textAreaValue))) {
+      scrollON();
       dispatch(writeMessage({ id: generateNextId(chatList.messages), message: textAreaValue }));
       setTextAreaValue('');
       replyMsg && sendReplyHandler({ userName: '', message: '' });
