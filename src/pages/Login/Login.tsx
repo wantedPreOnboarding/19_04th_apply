@@ -130,9 +130,9 @@ const Login = () => {
           {authCheck ? (
             <S.LoginMenu>
               <Link to={PAGE_URLS.CHAT_ROOM}>
-                <S.GoBackBtn>채팅으로 돌아가기</S.GoBackBtn>
+                <S.LoginBtn>채팅으로 돌아가기</S.LoginBtn>
               </Link>
-              <S.LoginBtn onClick={logOutHandler}>LogOut</S.LoginBtn>
+              <S.LogoutBtn onClick={logOutHandler}>LogOut</S.LogoutBtn>
             </S.LoginMenu>
           ) : userName && imageSrc ? (
             <Link to={PAGE_URLS.CHAT_ROOM}>
