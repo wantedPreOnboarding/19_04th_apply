@@ -35,7 +35,7 @@ export const Name = styled.strong`
 `;
 
 export const Data = styled.span`
-  margin-left: auto;
+  margin-left: 10px;
   font-size: 8px;
   font-size: ${({ theme }) => theme.fontSize.xs};
   font-family: Roboto;
