@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
+  background: ${props => props.theme.colors.chatWhite};
 `;
 export const Inner = styled.div`
   position: relative;
@@ -21,6 +22,7 @@ export const SendForm = styled.form`
   display: flex;
   justify-content: space-between;
   position: relative;
+  z-index: 2;
 `;
 
 export const TextBox = styled.textarea`
@@ -31,6 +33,7 @@ export const TextBox = styled.textarea`
   resize: none;
   padding: 10px 5px;
   overflow: auto;
+  z-index: 2;
 `;
 
 export const SendBtn = styled.button`
