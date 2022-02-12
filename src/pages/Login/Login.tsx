@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import * as S from './Login.styled';
 import { useAppDispatch } from 'hooks/useStore';
-import { login } from 'store/slices/auth';
+import { login, logout } from 'store/slices/auth';
 import { Link } from 'react-router-dom';
+import { PAGE_URLS } from 'router/consts';
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -60,6 +61,7 @@ const Login = () => {
               readImage(event);
             }}
           />
+
         </S.MenuBox>
         <S.MenuBox>
           <S.NameInput
@@ -71,12 +73,14 @@ const Login = () => {
           ></S.NameInput>
         </S.MenuBox>
         <S.MenuBox>
-          <Link to="/ChatRoom/1">
+                 <Link to={PAGE_URLS.CHAT_ROOM}>
             <S.LoginBtn onClick={sendInfohandler}>Login</S.LoginBtn>
           </Link>
         </S.MenuBox>
       </S.Menu>
       <S.Footer>s w e e t</S.Footer>
+
+
     </S.Wrapper>
   );
 };
