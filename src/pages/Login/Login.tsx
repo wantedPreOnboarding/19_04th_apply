@@ -4,10 +4,9 @@ import { useAppSelector, useAppDispatch } from 'hooks/useStore';
 import { login, logout } from 'store/slices/auth';
 import { Link } from 'react-router-dom';
 import { changeUserInfo } from 'store/slices/chat';
-
+import { PAGE_URLS } from 'router/consts';
 const Login = () => {
   const dispatch = useAppDispatch();
-
   const avatarURL = useAppSelector(state => state.auth.avatarURL);
   const userId = useAppSelector(state => state.auth.userId);
   const loginUserName = useAppSelector(state => state.auth.userName);
@@ -49,7 +48,6 @@ const Login = () => {
           id="imageAvatar"
           src={`${process.env.REACT_APP_ASSET_PATH}/logoIcon.svg`}
         />
-
         <span>sweet</span>
       </S.Logo>
       <S.Header>
@@ -94,14 +92,13 @@ const Login = () => {
         <S.MenuBox>
           {authCheck ? (
             <S.LoginMenu>
-              <Link to="/ChatRoom/1">
+              <Link to={PAGE_URLS.CHAT_ROOM}>
                 <S.GoBackBtn>채팅으로 돌아가기</S.GoBackBtn>
               </Link>
               <S.LoginBtn onClick={logOutHandler}>LogOut</S.LoginBtn>
             </S.LoginMenu>
           ) : (
-            <Link to="/ChatRoom/1">
-              {' '}
+            <Link to={PAGE_URLS.CHAT_ROOM}>
               <S.LoginBtn onClick={sendInfoHandler}>Login</S.LoginBtn>{' '}
             </Link>
           )}
