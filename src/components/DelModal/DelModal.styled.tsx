@@ -4,20 +4,30 @@ export const DelModalWrapper = styled.div<{ isOpen: boolean }>`
   display: ${props => (props.isOpen ? 'flex' : 'none')};
   position: absolute;
   width: 100%;
-  padding: 14px 14px;
   top: 0;
   bottom: 0;
+  z-index: 1;
+`;
+
+export const DelModalBackground = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 2;
 `;
 
 export const DelModalWindow = styled.div`
-  width: 100%;
+  position: absolute;
+  width: 96%;
   margin: auto auto;
   padding: 30px 30px;
   border: 1px solid ${({ theme }) => theme.colors.chatTomato};
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   background-color: ${({ theme }) => theme.colors.chatWhite};
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
   z-index: 3000;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
 `;

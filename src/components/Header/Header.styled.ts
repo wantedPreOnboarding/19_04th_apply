@@ -15,7 +15,6 @@ export const Header = styled.header`
   font-weight: 700;
   > h1 {
     color: ${props => props.theme.colors.chatWhite};
-    padding-top: 2px;
   }
   > button {
     background: none;

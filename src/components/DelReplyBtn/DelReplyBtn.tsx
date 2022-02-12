@@ -9,7 +9,6 @@ import { delModalNum, modalMessage, setIsOpen } from 'store/slices/modal';
 const DelReplyBtn = ({ item }: ChatListItemProps) => {
   const isOpen = useAppSelector(state => state.modal.isOpen);
   const dispatch = useAppDispatch();
-  console.log(isOpen, 'isOpen');
 
   const replyBtnHandler = () => {
     dispatch(replymessage({ userName: item.user.userName, message: item.message }));
