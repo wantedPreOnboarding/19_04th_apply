@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components/macro';
 import reset from 'styled-reset';
 
 const GrobalStyles = createGlobalStyle`
@@ -23,6 +23,10 @@ const GrobalStyles = createGlobalStyle`
     border: none;
     background: inherit;
     cursor: pointer;
+  }
+
+  #root {
+    height: 100%;
   }
   
   #modal-root {

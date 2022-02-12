@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const ChatRoom = styled.div`
-  height: 100%;
+  height: calc(100% - 121px);
   overflow-y: auto;
   &::-webkit-scrollbar {
     display: none;

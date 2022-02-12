@@ -21,14 +21,14 @@ export const ReplyBtn = styled.button`
 `;
 
 export const ReplyIcon = styled.img.attrs({
-  src: 'assets/images/replyBtn.svg',
+  src: `${process.env.REACT_APP_ASSET_PATH}/replyBtn.svg}`,
 })`
   margin-top: 3px;
   height: 9px;
 `;
 
 export const DeleteButton = styled.img.attrs({
-  src: 'assets/images/deleteBtn.svg',
+  src: `${process.env.REACT_APP_ASSET_PATH}/deleteBtn.svg}`,
 })`
   height: 10px;
   cursor: pointer;

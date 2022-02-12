@@ -1,7 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as S from './Login.styled';
 import { useAppSelector, useAppDispatch } from 'hooks/useStore';
 import { login } from 'store/slices/auth';
+<<<<<<< HEAD
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> b8a8746a42a818701650ce29909d551f32bf95e3
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -55,12 +59,20 @@ const Login = () => {
         </S.MenuBox>
         <S.MenuBox>
           <S.NameInput id="nameInput" placeholder="이름을 입력해주세요"></S.NameInput>
+<<<<<<< HEAD
         </S.MenuBox>
         <S.MenuBox>
           <S.LoginBtn>Login</S.LoginBtn>
         </S.MenuBox>
       </S.Menu>
       <S.Footer>s w e e t</S.Footer>
+=======
+        </S.NameInputBox>
+        <Link to="/ChatRoom/1">
+          <S.LoginBtn>Login</S.LoginBtn>
+        </Link>
+      </S.Inner>
+>>>>>>> b8a8746a42a818701650ce29909d551f32bf95e3
     </S.Wrapper>
   );
 };
