@@ -103,7 +103,18 @@ const Login = () => {
       <S.Menu>
         <S.MenuBox>
           <S.ImageLabel htmlFor="imageInput">
-            {authCheck ? '프로필사진수정' : '+프로필사진등록'}
+            {authCheck ? (
+              <>
+                <S.ReturnIcon
+                  alt="imageAvatar"
+                  id="imageAvatar"
+                  src={`${process.env.REACT_APP_ASSET_PATH}/return.svg`}
+                />
+                프로필사진수정
+              </>
+            ) : (
+              '+ 프로필사진등록'
+            )}
           </S.ImageLabel>
           <S.ImageInput
             id="imageInput"

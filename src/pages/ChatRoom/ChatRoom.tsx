@@ -30,7 +30,7 @@ const ChatRoom = (): ReactElement => {
       <S.ChatRoom ref={chatRoomRef}>
         <ChatList />
       </S.ChatRoom>
-      <InputBox />
+      <InputBox scrollON={scrollON} />
       <Portal>
         <DelModal extraHandler={scrollOFF} />
       </Portal>

@@ -42,8 +42,16 @@ export const Data = styled.span`
   color: #000;
 `;
 
-export const BoxTextWrapper = styled.div`
+export const BoxTextWrapper = styled.div<ItemProps>`
   display: flex;
+  animation: fadeIn 0.3s ease-in-out;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+  }
 `;
 
 export const BoxText = styled.div`
