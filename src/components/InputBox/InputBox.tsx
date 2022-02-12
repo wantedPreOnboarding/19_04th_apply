@@ -44,7 +44,7 @@ const SendBox: React.FunctionComponent = () => {
     }
   };
 
-  const keyDownHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const keyUpHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     enterSubmitCheck(event) && sendMessageHandler();
   };
 
@@ -80,7 +80,7 @@ const SendBox: React.FunctionComponent = () => {
             placeholder="write a message"
             ref={textareaRef}
             onChange={textAreaChange}
-            onKeyUp={keyDownHandler}
+            onKeyUp={keyUpHandler}
           />
           {sendActive && <S.SendBtn type="submit">작성</S.SendBtn>}
         </S.SendForm>

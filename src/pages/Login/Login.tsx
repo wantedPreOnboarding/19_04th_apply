@@ -47,7 +47,7 @@ const Login = () => {
     setUserName(startEndWhiteSpaceRemove(event.target.value));
   };
 
-  const keyDownHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const keyUpHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (!enterSubmitCheck(event)) {
       return;
     } else if (enterSubmitCheck(event) && (!userName || !imageSrc)) {
@@ -123,7 +123,7 @@ const Login = () => {
             onChange={event => {
               userNameHandler(event);
             }}
-            onKeyUp={keyDownHandler}
+            onKeyUp={keyUpHandler}
           ></S.NameInput>
         </S.MenuBox>
         <S.MenuBox>
