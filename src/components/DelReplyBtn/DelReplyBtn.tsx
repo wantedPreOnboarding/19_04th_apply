@@ -1,9 +1,8 @@
 import React, { MouseEvent } from 'react';
 import { useAppSelector, useAppDispatch } from 'hooks/useStore';
 import * as S from './DelReplyBtn.styled';
-import ChatListItemProps from '../ChatList/ChatListItem/ChatListItem.type';
+import ChatListItemProps from 'components/ChatList/ChatListItem/ChatListItem.type';
 import { replymessage } from 'store/slices/chat';
-import DelModal from 'components/DelModal/DelModal';
 import { delModalNum, modalMessage, setIsOpen } from 'store/slices/modal';
 
 const DelReplyBtn = ({ item }: ChatListItemProps) => {
@@ -21,12 +20,14 @@ const DelReplyBtn = ({ item }: ChatListItemProps) => {
   };
 
   return (
-    <S.DelReplyWrapper>
-      <S.ReplyBtn onClick={replyBtnHandler}>
-        <S.ReplyIcon />
-      </S.ReplyBtn>
-      <S.DeleteButton onClick={deleteBtnHandler} />
-    </S.DelReplyWrapper>
+    <S.DelReplyBtnWrapper>
+      <S.DelReplyBox>
+        <S.ReplyBtn onClick={replyBtnHandler}>
+          <S.ReplyIcon />
+        </S.ReplyBtn>
+        <S.DeleteButton onClick={deleteBtnHandler} />
+      </S.DelReplyBox>
+    </S.DelReplyBtnWrapper>
   );
 };
 export default DelReplyBtn;

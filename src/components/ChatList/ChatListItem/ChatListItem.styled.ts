@@ -44,10 +44,12 @@ export const Data = styled.span`
 
 export const BoxTextWrapper = styled.div`
   display: flex;
+  padding: 5px 0;
 `;
 
 export const BoxText = styled.div`
-  margin-top: 5px;
+  position: relative;
+  margin: 5px 10px 0;
   padding: 15px 20px;
   border-radius: 10px;
   font-size: ${({ theme }) => theme.fontSize.s};
@@ -57,8 +59,11 @@ export const BoxText = styled.div`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 `;
 
-export const BoxButton = styled.div`
-  width: 32px;
-  margin: 0 7px 1px 7px;
-  align-self: flex-end;
+export const BoxButton = styled.div<{ isMsgEnter: boolean }>`
+  display: ${props => (props.isMsgEnter ? 'inline-block' : 'none')};
+  position: absolute;
+  width: 35px;
+  bottom: 35%;
+  right: -40px;
+  transform: translateY(50%);
 `;

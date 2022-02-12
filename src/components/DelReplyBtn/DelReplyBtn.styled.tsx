@@ -1,10 +1,16 @@
 import styled from 'styled-components/macro';
 
-export const DelReplyWrapper = styled.div`
+export const DelReplyBtnWrapper = styled.div`
+  width: 100px;
+  height: 24px;
+  text-align: center;
+`;
+
+export const DelReplyBox = styled.div`
   display: flex;
   width: 40px;
   height: 24px;
-  padding: 0 4px;
+  /* padding: 0 4px; */
   background-color: ${({ theme }) => theme.colors.chatgray};
   border-radius: 5px;
   justify-content: space-around;
@@ -15,6 +21,7 @@ export const DelReplyWrapper = styled.div`
     transition: transform 100ms;
   }
 `;
+
 export const ReplyBtn = styled.button`
   cursor: pointer;
 `;
