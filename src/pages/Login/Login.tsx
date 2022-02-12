@@ -66,7 +66,6 @@ const Login = () => {
   }, [userId]);
 
   useEffect(() => {
-    console.log(toastMsg);
     if (toastMsg && !isEmpted) {
       setIsEmpted(true);
       setTimeout(() => {
