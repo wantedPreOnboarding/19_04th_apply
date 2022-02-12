@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import * as S from './Login.styled';
 import { useAppSelector, useAppDispatch } from 'hooks/useStore';
-import { login } from 'store/slices/auth';
+import { login, logout } from 'store/slices/auth';
 import { Link } from 'react-router-dom';
+import { PAGE_URLS } from 'router/consts';
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -37,9 +38,16 @@ const Login = () => {
         <S.NameInputBox>
           <S.NameInput id="nameInput" placeholder="이름을 입력해주세요"></S.NameInput>
         </S.NameInputBox>
-        <Link to="/ChatRoom/1">
+        <Link to={PAGE_URLS.CHAT_ROOM}>
           <S.LoginBtn>Login</S.LoginBtn>
         </Link>
+        <S.LoginBtn
+          onClick={() => {
+            dispatch(logout());
+          }}
+        >
+          Logout
+        </S.LoginBtn>
       </S.Inner>
     </S.Wrapper>
   );

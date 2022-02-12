@@ -1,15 +1,17 @@
 import React, { ReactElement } from 'react';
 import * as S from './Header.styled';
 import { useAppSelector } from 'hooks/useStore';
+import { Link } from 'react-router-dom';
+import { PAGE_URLS } from 'router/consts';
 
 const Header = (): ReactElement => {
   const title = useAppSelector(state => state.chat.chatList.title);
   const userNumber = useAppSelector(state => state.chat.chatList.users).length;
   return (
     <S.Header>
-      <button>
+      <Link to={PAGE_URLS.LOGIN}>
         <img src={`${process.env.REACT_APP_ASSET_PATH}/arrowIcon.svg`} />
-      </button>
+      </Link>
       <h1>
         {title}
         {` (${userNumber})`}
