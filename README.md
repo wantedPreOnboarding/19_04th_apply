@@ -46,7 +46,7 @@
 
 [프로젝트 링크 바로가기](https://switchat.netlify.app/)
 
-## 4. 📄 협업 문서
+## 4. 📄 기능 목록 명세
 
 [프로젝트 노션 바로가기](https://smiling-player-37b.notion.site/2-2-6ea59fa7133d47dd9f75ed9ba8724206)
 
@@ -54,17 +54,7 @@
 
 [피그마 디자인 바로가기](https://www.figma.com/file/LYhssxBbJTYhLQCtvdNITP/swift-massenger?node-id=64%3A350)
 
-## 6. 👩‍💻 기능 목록 명세
-
-### ✔ 담당자 : 김영종
-
-### ✔ 담당자 : 정다빈
-
-### ✔ 담당자 : 최수임
-
-### ✔ 담당자 : 이송현
-
-## 7. 💿 설치 및 실행 방법
+## 6. 💿 설치 및 실행 방법
 
 Project Clone
 
@@ -84,7 +74,7 @@ Project Start For Development
 $ yarn start
 ```
 
-## 8. 🛠️ 기술 스택
+## 7. 🛠️ 기술 스택
 
 <div>
   <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
