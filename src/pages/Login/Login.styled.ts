@@ -142,20 +142,6 @@ export const LoginMenu = styled.section`
   align-items: center;
 `;
 export const LoginBtn = styled.button`
-  border: 1px solid ${props => props.theme.colors.chatTomato};
-  border-radius: 20px;
-  margin-top: 20px;
-  width: 200px;
-  height: 50px;
-  font-size: ${props => props.theme.fontSize.xl};
-  font-weight: ${props => props.theme.fontWeight.semiStrong};
-  &:hover {
-    background: ${props => props.theme.colors.chatTomato};
-    color: ${({ theme }) => theme.colors.chatWhite};
-  }
-  transition: all 0.2s ease-in-out;
-`;
-export const GoBackBtn = styled.button`
   background: ${props => props.theme.colors.chatTomato};
   color: ${props => props.theme.colors.chatWhite};
   border-radius: 20px;
@@ -166,6 +152,21 @@ export const GoBackBtn = styled.button`
   font-weight: ${props => props.theme.fontWeight.semiStrong};
   &:hover {
     filter: brightness(90%);
+  }
+  transition: all 0.2s ease-in-out;
+`;
+export const LogoutBtn = styled.button`
+  background: ${props => props.theme.colors.chatWhite};
+  border: 2px solid ${({ theme }) => theme.colors.chatTomato};
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  font-size: ${props => props.theme.fontSize.xl};
+  font-weight: ${props => props.theme.fontWeight.semiStrong};
+  &:hover {
+    background: ${props => props.theme.colors.chatTomato};
+    color: ${props => props.theme.colors.chatWhite};
   }
   transition: all 0.2s ease-in-out;
 `;
@@ -180,4 +181,5 @@ export const Footer = styled.footer`
   height: 50px;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
   background-color: ${({ theme }) => theme.colors.chatWhite};
+  z-index: 2;
 `;

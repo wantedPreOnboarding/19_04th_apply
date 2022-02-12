@@ -1,8 +1,9 @@
 import React from 'react';
 import * as S from './NoticeToast.styled';
-const NoticeToast = ({ msg }: { msg: string }) => {
+import NoticeToastProps from './NoticeToast.type';
+const NoticeToast = ({ msg, top, bottom }: NoticeToastProps) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper top={top} bottom={bottom}>
       <S.Text>{msg}</S.Text>
     </S.Wrapper>
   );
