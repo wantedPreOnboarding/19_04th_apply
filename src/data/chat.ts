@@ -2,17 +2,17 @@ const users = [
   {
     userId: 1,
     userName: '임수',
-    avatarURL: 'assets/images/defaultUserImg.png',
+    avatarURL: `${process.env.REACT_APP_ASSET_PATH}/defaultUserImg.png`,
   },
   {
     userId: 2,
     userName: '송현',
-    avatarURL: 'assets/images/defaultUserImg.png',
+    avatarURL: `${process.env.REACT_APP_ASSET_PATH}/defaultUserImg.png`,
   },
   {
     userId: 3,
     userName: '빈다',
-    avatarURL: 'assets/images/defaultUserImg.png',
+    avatarURL: `${process.env.REACT_APP_ASSET_PATH}/defaultUserImg.png`,
   },
 ];
 
