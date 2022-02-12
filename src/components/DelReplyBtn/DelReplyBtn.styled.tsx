@@ -2,8 +2,8 @@ import styled from 'styled-components/macro';
 
 export const DelReplyWrapper = styled.div`
   display: flex;
-  width: 32px;
-  height: 16px;
+  width: 40px;
+  height: 24px;
   padding: 0 4px;
   background-color: ${({ theme }) => theme.colors.chatgray};
   border-radius: 5px;
@@ -22,13 +22,16 @@ export const ReplyBtn = styled.button`
 export const ReplyIcon = styled.img.attrs({
   src: `${process.env.REACT_APP_ASSET_PATH}/replyBtn.svg`,
 })`
+  color-adjust: ${({ theme }) => theme.colors.chatRed};
   margin-top: 4px;
-  height: 8px;
+  margin-left: 1px;
+  height: 11px;
 `;
 
 export const DeleteButton = styled.img.attrs({
   src: `${process.env.REACT_APP_ASSET_PATH}/deleteBtn.svg`,
 })`
-  height: 9px;
+  width: 12px;
+  height: 13px;
   cursor: pointer;
 `;
