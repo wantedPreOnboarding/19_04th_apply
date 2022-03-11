@@ -34,14 +34,15 @@ const SendBox = ({ scrollON }: { scrollON: () => void }): ReactElement => {
 
   const sendMessageHandler = (event?: React.FormEvent<HTMLFormElement>) => {
     event && event.preventDefault();
+
     if (!isStringEmpty(startEndWhiteSpaceRemove(textAreaValue))) {
       scrollON();
       dispatch(writeMessage({ id: generateNextId(chatList.messages), message: textAreaValue }));
-      setTextAreaValue('');
       replyMsg && sendReplyHandler({ userName: '', message: '' });
     } else {
       setToastMsg('메세지를 입력해주세요!');
     }
+    setTextAreaValue('');
   };
 
   const keyUpHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
