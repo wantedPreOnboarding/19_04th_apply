@@ -34,7 +34,6 @@ const SendBox = ({ scrollON }: { scrollON: () => void }): ReactElement => {
 
   const sendMessageHandler = (event?: React.FormEvent<HTMLFormElement>) => {
     event && event.preventDefault();
-
     if (!isStringEmpty(startEndWhiteSpaceRemove(textAreaValue))) {
       scrollON();
       dispatch(writeMessage({ id: generateNextId(chatList.messages), message: textAreaValue }));
@@ -45,7 +44,7 @@ const SendBox = ({ scrollON }: { scrollON: () => void }): ReactElement => {
     setTextAreaValue('');
   };
 
-  const keyUpHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const keyPressHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     enterSubmitCheck(event) && sendMessageHandler();
   };
 
@@ -81,7 +80,7 @@ const SendBox = ({ scrollON }: { scrollON: () => void }): ReactElement => {
             placeholder="write a message"
             ref={textareaRef}
             onChange={textAreaChange}
-            onKeyUp={keyUpHandler}
+            onKeyPress={keyPressHandler}
           />
           {sendActive && <S.SendBtn type="submit">작성</S.SendBtn>}
         </S.SendForm>
