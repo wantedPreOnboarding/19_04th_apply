@@ -37,14 +37,14 @@ const SendBox = ({ scrollON }: { scrollON: () => void }): ReactElement => {
     if (!isStringEmpty(startEndWhiteSpaceRemove(textAreaValue))) {
       scrollON();
       dispatch(writeMessage({ id: generateNextId(chatList.messages), message: textAreaValue }));
-      setTextAreaValue('');
       replyMsg && sendReplyHandler({ userName: '', message: '' });
     } else {
       setToastMsg('메세지를 입력해주세요!');
     }
+    setTextAreaValue('');
   };
 
-  const keyUpHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+  const keyPressHandler = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     enterSubmitCheck(event) && sendMessageHandler();
   };
 
@@ -80,7 +80,7 @@ const SendBox = ({ scrollON }: { scrollON: () => void }): ReactElement => {
             placeholder="write a message"
             ref={textareaRef}
             onChange={textAreaChange}
-            onKeyUp={keyUpHandler}
+            onKeyPress={keyPressHandler}
           />
           {sendActive && <S.SendBtn type="submit">작성</S.SendBtn>}
         </S.SendForm>

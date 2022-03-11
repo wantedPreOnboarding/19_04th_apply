@@ -61,10 +61,10 @@ export const Header = styled.div`
 `;
 
 export const Avatar = styled.img`
-  width: 300px;
-  height: 300px;
+  max-height: 230px;
   border-radius: ${props => props.theme.borderRadius.normal};
 `;
+
 export const ChatIcon = styled.img`
   width: 250px;
   height: 250px;
@@ -74,8 +74,8 @@ export const ChatIcon = styled.img`
 
 export const Menu = styled.div`
   position: absolute;
-  bottom: 150px;
-  width: 90%;
+  bottom: 10%;
+  width: 80%;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -86,9 +86,13 @@ export const Menu = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   background-color: ${({ theme }) => theme.colors.chatWhite};
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25));
+
+  @media screen and (max-height: 950px) {
+    height: 250px;
+  }
 `;
 export const HeadMenu = styled(Menu)`
-  top: 150px;
+  top: 20%;
 `;
 
 export const MenuBox = styled.section`
