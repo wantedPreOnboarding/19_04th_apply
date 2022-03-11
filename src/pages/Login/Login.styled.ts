@@ -78,10 +78,9 @@ export const Menu = styled.div`
   width: 80%;
   height: 32%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  padding: 30px 0px;
   border-top: 1px solid ${({ theme }) => theme.colors.chatTomato};
   border-radius: ${({ theme }) => theme.borderRadius.normal};
   background-color: ${({ theme }) => theme.colors.chatWhite};
@@ -92,7 +91,6 @@ export const HeadMenu = styled(Menu)`
 `;
 
 export const MenuBox = styled.section`
-  margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -142,10 +140,11 @@ export const LoginMenu = styled.section`
   align-items: center;
 `;
 export const LoginBtn = styled.button`
+  margin: 1% 0;
   background: ${props => props.theme.colors.chatTomato};
   color: ${props => props.theme.colors.chatWhite};
   border-radius: 20px;
-  margin-top: 20px;
+
   width: 200px;
   height: 50px;
   font-size: ${props => props.theme.fontSize.xl};
@@ -156,10 +155,10 @@ export const LoginBtn = styled.button`
   transition: all 0.2s ease-in-out;
 `;
 export const LogoutBtn = styled.button`
+  margin: 1% 0;
   background: ${props => props.theme.colors.chatWhite};
   border: 3px solid ${({ theme }) => theme.colors.chatTomato};
   border-radius: 20px;
-  margin-top: 20px;
   width: 200px;
   height: 50px;
   font-size: ${props => props.theme.fontSize.xl};
