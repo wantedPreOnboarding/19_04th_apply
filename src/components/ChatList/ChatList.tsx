@@ -7,12 +7,12 @@ const ChatList = () => {
   const auth = useAppSelector(state => state.auth);
   const users = useAppSelector(state => state.chat.chatList.users);
   const messages = useAppSelector(state => state.chat.chatList.messages);
-  const addAuth = users.map(user =>
+  const usersWithAuth = users.map(user =>
     user.userId === auth.userId ? { ...user, auth: true } : { ...user, auth: false },
   );
   const roomData = messages.map(message => ({
     ...message,
-    user: addAuth.filter(users => users.userId === message.userId)[0],
+    user: usersWithAuth.filter(users => users.userId === message.userId)[0],
   }));
 
   return (
